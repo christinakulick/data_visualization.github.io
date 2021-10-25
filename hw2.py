@@ -26,7 +26,7 @@ data_dict = {'Alien': alien_count, 'Human': human_count}
 species = list(data_dict.keys())
 count = list(data_dict.values())
 fig = plt.figure(figsize=(7,5))
-plt.bar( species, count, color = 'blue', width = 0.4)
+plt.bar( species, count, color = '#8EB897', width = 0.4)
 plt.xlabel("Species Type")
 plt.ylabel("Number of Characters")
 plt.title("Number Of Character For Each Species Type In Rick And Morty")
@@ -51,4 +51,12 @@ print('Unknown=', Unknown)
 
 data_dict2 = {'Male': (Male/20*100), 'Female': Female/20*100, 'Unknown': Unknown/20*100}
 Gender = list(data_dict2.keys())
-Percentage
+Percentage = list(data_dict2.values())
+colors = ['#8EB897', '#B7C3F3', '#DD7596']
+fig, ax1 = plt.subplots()
+ax1.pie(Percentage, labels = Gender, autopct='%1.0f%%', startangle=20, wedgeprops = { 'linewidth' : 2, 'edgecolor' : 'white' }, colors = colors)
+ax1.axis('equal')
+ax1.legend(title="Genders:")
+plt.title("Gender Percentages Of The Characters In Rick and Morty")
+plt.show()
+
