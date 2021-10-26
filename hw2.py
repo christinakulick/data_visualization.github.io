@@ -83,9 +83,9 @@ Gender = list(data_dict2.keys())
 Percentage = list(data_dict2.values())
 colors = ['#8EB897', '#B7C3F3', '#DD7596']
 fig, ax1 = plt.subplots()
-ax1.pie(Percentage, labels = Gender, autopct='%1.0f%%', startangle=20, wedgeprops = { 'linewidth' : 2, 'edgecolor' : 'white' }, colors = colors)
+ax1.pie(Percentage, autopct='%1.0f%%', startangle=20, wedgeprops = { 'linewidth' : 2, 'edgecolor' : 'white' }, colors = colors)
 ax1.axis('equal')
-ax1.legend(title="Genders:")
+ax1.legend(title="Genders:", labels= Gender)
 plt.title("Percentages Of Each Gender For First 20 Rick and Morty Characters")
 plt.show()
 
