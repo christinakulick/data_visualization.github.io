@@ -6,9 +6,9 @@ For this project I looked at data for the TV show _Rick and Morty_
 
 ![Episodes VS Location](Episodes_Locations.png)
 
-Here is the link to the [original data set](location.json) for my first graph. In my graph I looked at the first 20 episodes in the data set. I then found all the locations mentioned in those 20 episodes and plotted how many of these 20 occurred at a specific location. My locations were: Plant, Cluster, Space Station, Microverse, TV, Resort, Fantasy Town, and Dream. Results show most of the episodes occur on a Planet!
+Here is the link to the [original data set](location.json) for my first graph. In my graph I looked at the first 20 episodes in the data set. I then found all the locations mentioned in those 20 episodes and plotted how many of these 20 occurred at a specific location. My locations were: Planet, Cluster, Space Station, Microverse, TV, Resort, Fantasy Town, and Dream. Results show most of the episodes occur on a Planet!
 
-**Percent of Each Gender of the Character**
+**Percent of Each Gender**
 
 ![Percent VS Gender](Percent_Gender.png)
 
