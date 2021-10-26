@@ -1,4 +1,4 @@
-# Rick and Morty Data Visulization
+# Rick and Morty Data Visualization
 
 For this project I looked at data for the TV show _Rick and Morty_
 
