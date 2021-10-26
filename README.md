@@ -2,7 +2,7 @@
 
 For this project I looked at data for the TV show _Rick and Morty_
 
-**Number of Episodes at a Certain Equation**
+**Number of Episodes at a Certain Location**
 
 ![Episodes VS Location](Episodes_Locations.png)
 
