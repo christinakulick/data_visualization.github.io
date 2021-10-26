@@ -1,36 +1,65 @@
 import json
 import matplotlib.pyplot as plt
-import numpy as np
 
-alien_count = 0
-human_count = 0
+# First plot using Location data
 
-files= ['character.json']
+Planet = 0
+Cluster = 0
+Space_Station = 0
+Microverse = 0
+TV = 0
+Resort = 0
+Fantasy_Town = 0
+Dream = 0
+
+with open('location.json', encoding = 'ascii') as f:
+    text = f.read()
+    locations = json.loads(text)
+
+for location in locations['results']:
+    for keys in location:
+        if keys == 'type':
+            if location['type'] == 'Planet':
+                Planet += 1
+            if location['type'] == 'Cluster':
+                Cluster += 1
+            if location['type'] == 'Space station':
+                Space_Station += 1
+            if location['type'] == 'Microverse':
+                Microverse += 1
+            if location['type'] == 'TV':
+                TV += 1
+            if location['type'] == 'Resort':
+                Resort += 1
+            if location['type'] == 'Fantasy town':
+                Fantasy_Town += 1
+            if location['type'] == 'Dream':
+                Dream += 1
+            
+print('Planet=', Planet)
+print('Cluster=', Cluster)
+print('Space Station=', Space_Station)
+print('Microverse=', Microverse)
+print('TV=', TV)
+print('Resort=', Resort)
+print('Fantasy Town=', Fantasy_Town)
+print('Dream=', Dream)
+
+data_dict = {'Planet': Planet, 'Cluster': Cluster, 'Space station': Space_Station, 'Microverse': Microverse, 'TV': TV, 'Resort': Resort, 'Fantasy town': Fantasy_Town, 'Dream': Dream}
+Location = list(data_dict.keys())
+count = list(data_dict.values())
+fig = plt.figure(figsize=(10,6))
+plt.bar(Location, count, width = 0.5)
+plt.xlabel("Location")
+plt.ylabel("Number of Episodes")
+plt.title("Number Of Episodes At A Location For First 20 Rick And Morty Episodes")
+plt.show()
+
+# Second Plot using Character data
 
 with open('character.json', encoding = 'ascii') as f:
     text = f.read()
     characters = json.loads(text)
-
-for character in characters['results']:
-    for keys in character:
-        if keys == 'species':
-            if character['species'] == 'Alien':
-                alien_count += 1
-            if character['species'] == 'Human':
-                human_count += 1
-
-print('alien_count=', alien_count)
-print('human_count=', human_count)
-
-data_dict = {'Alien': alien_count, 'Human': human_count}
-species = list(data_dict.keys())
-count = list(data_dict.values())
-fig = plt.figure(figsize=(7,5))
-plt.bar( species, count, color = '#8EB897', width = 0.4)
-plt.xlabel("Species Type")
-plt.ylabel("Number of Characters")
-plt.title("Number Of Character For Each Species Type In Rick And Morty")
-plt.show()
 
 Male = 0
 Female = 0 
@@ -57,6 +86,6 @@ fig, ax1 = plt.subplots()
 ax1.pie(Percentage, labels = Gender, autopct='%1.0f%%', startangle=20, wedgeprops = { 'linewidth' : 2, 'edgecolor' : 'white' }, colors = colors)
 ax1.axis('equal')
 ax1.legend(title="Genders:")
-plt.title("Gender Percentages Of The Characters In Rick and Morty")
+plt.title("Percentages Of Each Gender For First 20 Rick and Morty Characters")
 plt.show()
 
